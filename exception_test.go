@@ -65,3 +65,9 @@ func TestThrow(t *testing.T) {
 	err := TryCatch[error](func() { Panicf("2+3=%d", 2+3) })
 	require.EqualError(t, err, "2+3=5")
 }
+
+func TestRuntimeErrors(t *testing.T) {
+	var x any = 0.0
+	err := TryCatch[error](func() { fmt.Println(x.(string)) })
+	require.ErrorContains(t, err, "interface conversion")
+}
