@@ -1,3 +1,5 @@
+[![GoDev](https://img.shields.io/badge/go.dev-reference-007d9c?logo=go&logoColor=white)](https://pkg.go.dev/github.com/gomlx/exceptions?tab=doc)
+
 # exceptions
 
 Simple exceptions support for Go, using `panic()` and `recover()`.
