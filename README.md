@@ -7,7 +7,7 @@ This library calls the parameter passed to `panic` an _exception_, and provides 
 
 ## Examples
 
-### Catching an exception
+### Catching any exception
 
 An exception in Go is what goes into the `panic()` call. The returned value (`exception` in the example) is of type `any`.
 
@@ -15,11 +15,13 @@ An exception in Go is what goes into the `panic()` call. The returned value (`ex
 import . "github.com/gomlx/exceptions"
 
 ...
-	exception := Try(fn)
+	exception := Try(func() { panic("cookies") })
 	if exception != nil {
-		... 
+		fmt.Printf("Caught: %v\n", exception)
 	}
 ```
+
+It will print: `Caught: cookies`.
 
 ### Throwing an exception
 
