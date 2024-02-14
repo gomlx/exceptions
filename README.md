@@ -9,7 +9,7 @@ This library calls the parameter passed to `panic` an _exception_, and provides 
 
 ## Examples
 
-### Catching any exception
+### Catching any exception with `Try`
 
 An exception in Go is what goes into the `panic()` call. The returned value (`exception` in the example) is of type `any`.
 
@@ -25,7 +25,7 @@ import . "github.com/gomlx/exceptions"
 
 It will print: `Caught: cookies`.
 
-### Throwing an exception
+### Throwing an exception with `Panicf`
 
 We keep the Go word term for it, `panic`: one can simply use `panic` as usual,
 or use the provided `Panicf`, which converts the given text into an error+stack:
@@ -41,7 +41,7 @@ func MyRatio(myThing, total float64) float64 {
 }
 ```
 
-### Catching Typed Exceptions (`panic`)
+### Catching Typed Exceptions with `TryCatch`
 
 Go `panic()` supports any value to be passed -- the value is what we interpret as an exception.
 
