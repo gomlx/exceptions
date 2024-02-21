@@ -1,4 +1,4 @@
-module exceptions
+module github.com/gomlx/exceptions
 
 go 1.22
 
